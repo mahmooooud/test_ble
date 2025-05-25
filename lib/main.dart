@@ -6,6 +6,7 @@ import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:test_ble/ble-manager.dart';
 import 'package:vector_math/vector_math_64.dart'; // For compass calculations
 import 'package:geolocator/geolocator.dart'; // For phone's GPS
+import 'package:permission_handler/permission_handler.dart' as permissions; // For phone's GPS
 
 void main() {
   runApp(MyApp());
@@ -150,6 +151,8 @@ class _MyBleWidgetState extends State<MyBleWidget> {
   @override
   void initState() {
     super.initState();
+    permissions.Permission.location.request();
+    permissions.Permission.bluetooth.request();
     _startScan();
     _initLocation();
     _initCompass();

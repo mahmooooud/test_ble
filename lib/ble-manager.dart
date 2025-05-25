@@ -22,10 +22,8 @@ class BLEManager {
 
   // Replace with your actual UUIDs
   static const String SERVICE_UUID = "d93d1001-9591-4dc0-946e-c01c4bddf68e";
-  static const String WRITE_CHARACTERISTIC_UUID =
-      "d93d1003-9591-4dc0-946e-c01c4bddf68e";
-  static const String READ_CHARACTERISTIC_UUID =
-      "d93d1002-9591-4dc0-946e-c01c4bddf68e";
+  static const String WRITE_CHARACTERISTIC_UUID = "d93d1003-9591-4dc0-946e-c01c4bddf68e";
+  static const String READ_CHARACTERISTIC_UUID = "d93d1002-9591-4dc0-946e-c01c4bddf68e";
 
   Stream<List<BluetoothDevice>> get deviceStream => _deviceController.stream;
   Stream<BluetoothConnectionState> get connectionStateStream =>
